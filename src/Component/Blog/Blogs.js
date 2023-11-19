@@ -8,7 +8,6 @@ const Blogs = () => {
   if (loading) return <h4>صبور باشید ... </h4>;
 
   if (error) return <h4>Error ...</h4>;
-  console.log(data);
   return (
     <Grid container spacing={2}>
       {data.posts.map((post) => (

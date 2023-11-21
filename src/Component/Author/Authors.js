@@ -3,11 +3,12 @@ import { useQuery } from "@apollo/client";
 import { GET_AUTHORS_INFO } from "../../GraphQL/queries";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import Loader from "../shared/Loader";
 
 const Authors = () => {
   const { loading, data, errors } = useQuery(GET_AUTHORS_INFO);
 
-  if (loading) return <h4>صبور باشید ... </h4>;
+  if (loading) return <Loader />;
 
   if (errors) return <h4>Error ...</h4>;
   console.log(data);

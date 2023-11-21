@@ -14,7 +14,7 @@ function Footer() {
         textAlign="center"
         mt={10}
       >
-        پروژه وبلاگ با GraphQL | دوره ریکت سایت بوتواستارت
+       GraphQL | Mohammad TABAEI
       </Typography>
     </footer>
   );

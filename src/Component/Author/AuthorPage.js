@@ -5,6 +5,7 @@ import { useQuery } from "@apollo/client";
 import { Container, Grid, Avatar, Typography } from "@mui/material";
 import { GET_AUTHOR_INFO } from "../../GraphQL/queries";
 import CardEL from "./../shared/CardEL";
+import Loader from "../shared/Loader";
 
 function AuthorPage() {
   const { slug } = useParams();
@@ -12,11 +13,13 @@ function AuthorPage() {
   const { loading, data, error } = useQuery(GET_AUTHOR_INFO, {
     variables: { slug: slug },
   });
-  if (loading) return <h3>صبور باشید ... </h3>;
+  if (loading) return <Loader />;
 
   if (error) return <h3>Error ...</h3>;
   console.log(data);
-  const { author: { name, field, avatar, description, post} } = data;
+  const {
+    author: { name, field, avatar, description, post },
+  } = data;
   return (
     <Container maxWidth="lg">
       <Grid container mt={10}>

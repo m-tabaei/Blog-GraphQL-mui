@@ -18,4 +18,4 @@ const SEND_COMMENT = gql`
     }
   }
 `;
-export {SEND_COMMENT}
+export { SEND_COMMENT };

@@ -2,31 +2,34 @@ import React, { useState } from "react";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../GraphQL/mutation";
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 function CommentForm({ slug }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-
-  const [sendComment, { loading, data, errors }] = useMutation(SEND_COMMENT, {
+  const [pressed, setPressed] = useState(false);
+  const [sendComment, { loading, data, error }] = useMutation(SEND_COMMENT, {
     variables: { name, email, text, slug },
   });
+  if (error) return <h3>Error ...</h3>; console.log(data);
 
   console.log(data);
   const sendHandler = () => {
     if (name && email && text) {
       sendComment();
+      setPressed(true);
     } else {
       toast.warn("فیلد ها را پر کنید", {
         position: "top-center",
       });
     }
   };
-if(data){
-  toast.success("نظر شما با موقیت ثبت شد", {position:"top-center"})
-}
+  if (data && pressed) {
+    toast.success("نظر شما با موقیت ثبت شد", { position: "top-center" });
+    setPressed(false);
+  }
   return (
     <Grid
       container

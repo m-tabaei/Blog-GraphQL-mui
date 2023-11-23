@@ -74,7 +74,7 @@ const GET_POST_INFO = gql`
   }
 `;
 
-const GET_POST_COMMENT = gql`
+const GET_POST_COMMENTS = gql`
   query getPostComments($slug: String!) {
     comments(where: { post: { slug: $slug } }) {
       id
@@ -83,4 +83,4 @@ const GET_POST_COMMENT = gql`
     }
   }
 `;
-export { GET_BLOGS_INFO, GET_AUTHORS_INFO, GET_AUTHOR_INFO, GET_POST_INFO, GET_POST_COMMENT };
+export { GET_BLOGS_INFO, GET_AUTHORS_INFO, GET_AUTHOR_INFO, GET_POST_INFO, GET_POST_COMMENTS };

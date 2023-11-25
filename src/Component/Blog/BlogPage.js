@@ -20,7 +20,6 @@ function BlogPage() {
   if (loading) return <Loader />;
 
   if (error) return <h3>Error ...</h3>;
-  console.log(data);
 
   return (
     <Container maxWidth="lg">

@@ -11,7 +11,6 @@ const Authors = () => {
   if (loading) return <Loader />;
 
   if (errors) return <h4>Error ...</h4>;
-  console.log(data);
   const { authors } = data;
   return (
     <Grid

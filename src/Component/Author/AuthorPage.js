@@ -16,7 +16,6 @@ function AuthorPage() {
   if (loading) return <Loader />;
 
   if (error) return <h3>Error ...</h3>;
-  console.log(data);
   const {
     author: { name, field, avatar, description, post },
   } = data;

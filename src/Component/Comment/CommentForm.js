@@ -4,6 +4,9 @@ import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../GraphQL/mutation";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 function CommentForm({ slug }) {
   const [name, setName] = useState("");
@@ -13,9 +16,8 @@ function CommentForm({ slug }) {
   const [sendComment, { loading, data, error }] = useMutation(SEND_COMMENT, {
     variables: { name, email, text, slug },
   });
-  if (error) return <h3>Error ...</h3>; console.log(data);
+  if (error) return <h3>Error ...</h3>;
 
-  console.log(data);
   const sendHandler = () => {
     if (name && email && text) {
       sendComment();
@@ -41,7 +43,13 @@ function CommentForm({ slug }) {
       }}
     >
       <Grid item xs={12} m={2}>
-        <Typography component="p" variant="h6" fontWeight={700} color="primary">
+        <Typography
+          component="p"
+          variant="h6"
+          fontWeight={700}
+          color="primary"
+          sx={{ textAlign: "right" }}
+        >
           فرم ارسال کامنت
         </Typography>
       </Grid>
@@ -49,9 +57,13 @@ function CommentForm({ slug }) {
         <TextField
           label="نام کاربری"
           variant="outlined"
-          sx={{ width: "100%" }}
+          sx={{
+            width: "100%",
+            transformOrigin:"top right"
+          }}
           value={name}
           onChange={(e) => setName(e.target.value)}
+         
         />
       </Grid>
       <Grid item xs={12} m={2}>

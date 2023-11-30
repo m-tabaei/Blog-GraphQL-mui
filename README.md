@@ -1,4 +1,4 @@
-# Simple example site with dashboard for CRUD Api
+# Simple example weblog with GraphQL & mui
 ![weblog](https://github.com/m-tabaei/Blog-GraphQL-mui/blob/main/Capture.JPG?raw=true)
 ![weblog](https://github.com/m-tabaei/Blog-GraphQL-mui/blob/main/Capture2.JPG?raw=true)
 

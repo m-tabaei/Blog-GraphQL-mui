@@ -4,8 +4,7 @@
 
 - 🔗 ([https://blog-graph-ql-mui.vercel.app/])
 - 1-npm start
-- 2-cd src
-- 3-npm start
+
 - 💻 Developed by Seyed Mohammad Tabaei
 - 📆 Created - 2023
 - 🔧 Technologies Used - html, css, React, GraphQL, mui
